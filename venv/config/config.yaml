@@ -1,0 +1,17 @@
+extract:
+  s3:
+    s3_bucket: "my-bucket"
+    s3_key: "data/raw/data.csv"
+  api:
+    api_url: "https://api.publicapis.org/entries"
+
+transform:
+  columns_to_rename:
+    old_name: new_name
+  filter_conditions:
+    filter_column: "filter_value"
+
+load:
+  rds:
+    db_connection_string: "mysql+pymysql://admin:password1@devdb.cfo0u6kgi18o.eu-central-1.rds.amazonaws.com:3306/devdb"
+    destination_table: "my_table"
